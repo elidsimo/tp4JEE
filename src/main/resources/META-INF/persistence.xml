@@ -5,6 +5,9 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
 
+    <!-- ============================================ -->
+    <!-- Persistence Unit pour TP1 (ancien TP)       -->
+    <!-- ============================================ -->
     <persistence-unit name="BooksPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>net.codejava.Book</class>
@@ -29,7 +32,37 @@
         </properties>
     </persistence-unit>
 
+    <!-- ============================================ -->
+    <!-- Persistence Unit pour TP4 (nouveau TP)      -->
+    <!-- ============================================ -->
+    <persistence-unit name="BooksManager" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Déclaration de toutes les entités du TP4 -->
+        <class>net.codejava.Book</class>
+        <class>net.codejava.Publisher</class>
+        <class>net.codejava.Review</class>
+        <class>net.codejava.Category</class>
+
+        <properties>
+            <!-- Configuration MySQL -->
+            <property name="javax.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/bookdb?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/>
+            <property name="javax.persistence.jdbc.user"
+                      value="root"/>
+            <property name="javax.persistence.jdbc.password"
+                      value="elidrysy2005"/>
+
+            <!-- Configuration Hibernate -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
-
-
-

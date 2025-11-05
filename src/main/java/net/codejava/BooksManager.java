@@ -15,7 +15,8 @@ public class BooksManager {
         //update();
         //read();
         //remove();
-        query();
+       // query();
+
 
         end();
     }
