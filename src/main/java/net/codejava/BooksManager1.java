@@ -11,28 +11,28 @@ public class BooksManager1 {
     public static void main(String[] args) {
 
         // PARTIE 1 : Insertion et manipulation
-        System.out.println(" PARTIE 1");
-//        partie1InsertionEtManipulation();
+//        System.out.println(" PARTIE 1");
+       // partie1InsertionEtManipulation();
         System.out.println("\n\n");
-
-        // PARTIE 2 : Requêtes et manipulations
+//
+//        // PARTIE 2 : Requêtes et manipulations
         System.out.println("PARTIE 2");
          // Question 1
-        findBooksByCategory("Science Fiction");
-        System.out.println();
-        // Question 2
-        findBooksByPublisher("Eyrolles");
-        System.out.println();
-         //Question 3
-        deleteBook(3L);
-        // Question 4
-        updateBookPrice(1L, 49.99);
-        System.out.println();
-       // Question 5
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("BooksManager");
-        testCategories(emf);
+//        findBooksByCategory("Science Fiction");
+//        System.out.println();
+//        // Question 2
+//       findBooksByPublisher("Eyrolles");
+//        System.out.println();
+//         //Question 3
+//        deleteBook(4L);
+//        // Question 4
+//        updateBookPrice(1L, 49.99);
+//        System.out.println();
+//       // Question 5
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("BooksManager");
+//        testCategories(emf);
 
-        emf.close();
+//        emf.close();
     }
 
 

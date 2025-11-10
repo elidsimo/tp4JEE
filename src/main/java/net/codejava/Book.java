@@ -26,7 +26,7 @@ public class Book {
     private List<Review> reviews = new ArrayList<>();
 
     // Relation ManyToMany avec Category
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinTable(
             name = "book_category",
             joinColumns = @JoinColumn(name = "book_id"),

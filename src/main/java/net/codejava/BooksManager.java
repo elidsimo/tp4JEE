@@ -10,7 +10,19 @@ public class BooksManager {
 
     public static void main(String[] args) {
         begin();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("BooksPU");
+        EntityManager em = emf.createEntityManager();
 
+        Author a = new Author("Victor Hugo");
+        Publisher p = new Publisher("Gallimard", "France");
+
+        em.getTransaction().begin();
+        em.persist(a);
+        em.persist(p);
+        em.getTransaction().commit();
+
+        em.close();
+        emf.close();
         //create();
         //update();
         //read();
